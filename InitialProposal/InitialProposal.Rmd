@@ -1,0 +1,62 @@
+---
+title: "Initial Proposal"
+author: "Team GGJJ"
+date: January 23 2019
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Title of project
+
+This is initial proposal for Team ---.
+
+Our team members are: 
+
+Github ID |  Name
+---------|------------
+[@janxue](https://github.com/janxue) | Gary / Peiyuan Zhu (MSc, Statistics)
+[@janxue](https://github.com/janxue) | Glenn McGuinness (MSc, Statistics)
+[@janxue](https://github.com/janxue) | Jan Xue (MSc, Botany)
+[@janxue](https://github.com/janxue) | Jessica Schaub (MSc, Botany)
+
+Our project is based on the paper [title of paper](link or doi).
+
+## Proposal
+
+The following proposal is meant to give an outline of our project with an introduction, objectives, description of the data, proposed major analysis, and a breakdown of assigned tasks.
+
+### Abstract
+
+### Motivation 
+
+the papers demonstrate that 
+
+- a
+- b
+- c
+
+### Goals
+
+based on the data collected from --- and --- study, we will :
+
+1. a
+2. b
+
+### Description of Data
+
+the data provided from x paper :
+
+- RNA seq data with x. the samples included are :
+- a
+- b
+- c
+
+
+### Methods and Division of Labour
+
+- a
+- b
+- c
