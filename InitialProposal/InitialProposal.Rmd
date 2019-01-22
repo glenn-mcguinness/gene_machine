@@ -54,8 +54,6 @@ The data transcriptomic and methylomic data associated with this paper can be fo
 
 [Li et al. 2018](https://bmcplantbiol.biomedcentral.com/articles/10.1186/s12870-018-1384-4) demonstrate that:
 
-
-
 - a
 - b
 - methylation site differences were greater between parent-parent than parent-hybrid.
@@ -64,11 +62,13 @@ The data transcriptomic and methylomic data associated with this paper can be fo
 
 based on the data collected from Li et al. 2018, we will :
 
-1. Find genes that were differentially expressed between parents and offspring. Instead of treating them sepparately, we will try pooling the parents and pooling the offspring data. < unsure about this>
+1. Check if their results are valid, by trying to reproduce their clustering analysis of the RNA- seq data between the groups of parents and offpring that the authors have already defined, their differential expression analysis to see if we obtain the same differentially expressed genes that they did, 
+
+Find genes that were differentially expressed between parents and offspring. Instead of treating them sepparately, we will try pooling the parents and pooling the offspring data. < unsure about this>
 
 2. Do the differentially expressed genes in the hybrid offspring also correlate with close by methylation differences. If so how which genes?
 
-3.
+3. 
 
 ### Description of Data
 

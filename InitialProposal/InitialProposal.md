@@ -82,11 +82,13 @@ The data transcriptomic and methylomic data associated with this paper can be fo
 
 based on the data collected from Li et al. 2018, we will :
 
-1.  Find genes that were differentially expressed between parents and offspring. Instead of treating them sepparately, we will try pooling the parents and pooling the offspring data. &lt; unsure about this&gt;
+1.  Check if their results are valid, by trying to reproduce their clustering analysis of the RNA- seq data between the groups of parents and offpring that the authors have already defined, their differential expression analysis to see if we obtain the same differentially expressed genes that they did,
 
-2.  Do the differentially expressed genes in the hybrid offspring also correlate with close by methylation differences. If so how which genes?
+Find genes that were differentially expressed between parents and offspring. Instead of treating them sepparately, we will try pooling the parents and pooling the offspring data. &lt; unsure about this&gt;
 
-3.  
+1.  Do the differentially expressed genes in the hybrid offspring also correlate with close by methylation differences. If so how which genes?
+
+2.  
 
 ### Description of Data
 
