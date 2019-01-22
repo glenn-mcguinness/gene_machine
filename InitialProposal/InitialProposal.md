@@ -6,16 +6,44 @@ January 23 2019
 Title of project
 ----------------
 
-This is initial proposal for Team ---.
+This is initial proposal for **Team Brocoli**.
 
 Our team members are:
 
-| Github ID                                | Name                                 |
-|------------------------------------------|--------------------------------------|
-| \[@janxue\](<https://github.com/janxue>) | Gary / Peiyuan Zhu (MSc, Statistics) |
-| \[@janxue\](<https://github.com/janxue>) | Glenn McGuinness (MSc, Statistics)   |
-| \[@janxue\](<https://github.com/janxue>) | Jan Xue (MSc, Botany)                |
-| \[@janxue\](<https://github.com/janxue>) | Jessica Schaub (MSc, Botany)         |
+<table style="width:32%;">
+<colgroup>
+<col width="13%" />
+<col width="18%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Github ID</th>
+<th>Name</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="citation">[@garyzhubc]</span>(<a href="https://github.com/garyzhubc" class="uri">https://github.com/garyzhubc</a>)</td>
+<td>Gary / Peiyuan Zhu (MSc, Statistics)</td>
+</tr>
+<tr class="even">
+<td><span class="citation">[@glenn-mcguinness]</span>(<a href="https://github.com/glenn-mcguinness" class="uri">https://github.com/glenn-mcguinness</a>)</td>
+<td>Glenn McGuinness (MSc, Statistics)</td>
+</tr>
+<tr class="odd">
+<td><span class="citation">[@janxue]</span>(<a href="https://github.com/janxue" class="uri">https://github.com/janxue</a>)</td>
+<td>Jan Xue (MSc, Botany)</td>
+</tr>
+<tr class="even">
+<td><span class="citation">[@j-schaub]</span>(<a href="https://github.com/j-schaub" class="uri">https://github.com/j-schaub</a>)</td>
+<td>Jessica Schaub (MSc, Oceanography)</td>
+</tr>
+<tr class="odd">
+<td><span class="citation">[@ymkng]</span>(<a href="https://github.com/ymkng" class="uri">https://github.com/ymkng</a>)</td>
+<td>Michelle Kang (MSc, Bioinformatics)</td>
+</tr>
+</tbody>
+</table>
 
 Our project is based on the 2018 paper [Transcriptome and DNA methylome reveal insights into yield heterosis in the curds of broccoli (Brassica oleracea L var. italic)](https://bmcplantbiol.biomedcentral.com/articles/10.1186/s12870-018-1384-4?fbclid=IwAR3glcIlScIMQzxMjWtuaDowqrv7DlZbzAjrTAiHRlXkRfWdyfWgt_BqCW4).
 
@@ -36,13 +64,17 @@ Hybrid vigour or heterosis is the improved quality or trait in the offspring as 
 
 Figure 1. Hybrid vigour demonstrated by the larger head size of the hybrid offspring in comparison to the parents.
 
-In order to explore the genetic and methylomic basis of this phenomenon as well as the contribution from each parent we will be analyzing RNA-seq and Whole Genome Bisulfite Sequencing (WGBS) data from Li et al. (2018) from parent and offspring brocoli that exhbited hybrid vigour. The data transcriptomic and methylomic data associated with this paper can be found [here](https://static-content.springer.com/esm/art%3A10.1186%2Fs12870-018-1384-4/MediaObjects/12870_2018_1384_MOESM2_ESM.zip).
+In order to explore the genetic and methylomic basis of this phenomenon as well as the contribution from each parent we will be analyzing RNA-seq and Whole Genome Bisulfite Sequencing (WGBS) data from [Li et al. 2018](https://bmcplantbiol.biomedcentral.com/articles/10.1186/s12870-018-1384-4) from parent and offspring brocoli that exhbited hybrid vigour.
+
+The data transcriptomic and methylomic data associated with this paper can be found [here](https://static-content.springer.com/esm/art%3A10.1186%2Fs12870-018-1384-4/MediaObjects/12870_2018_1384_MOESM2_ESM.zip).
 
 <We will first explore the data through graphical visulaization, for example heat maps of RNA seq data. After that to compare the different gene expressions and epigenetic characteristics we will use ANOVA or analysis of variance for parental and hybrid offspring data.> --&gt; Gary and Glenn??? maybe add more
 
 ### Motivation
 
-the papers demonstrate that
+[Li et al. 2018](https://bmcplantbiol.biomedcentral.com/articles/10.1186/s12870-018-1384-4) demonstrate that:
+
+Male rats have lower DNMT3a activity and DNA methylation than females Inhibiting DNMT masculinized neuronal markers and sexual behaviour in female rats, and has no effect on male behaviour. Females with conditional knockout of isoform DNMT3 also display male sexual behaviour Even outside of the restricted period of development where they are sensitive to hormone therapy, DNMT inhibition still masculinizes females Some changes in gene expression are as a result of DNMT inhibition. The authors did not, however, attempt to link these changes to their methylation data which is why we have selected to further evaluate this paper.
 
 -   a
 -   b
@@ -52,8 +84,9 @@ the papers demonstrate that
 
 based on the data collected from --- and --- study, we will :
 
-1.  a
-2.  b
+1.  Are the parental lines more simmilar to each other than to the offspring exression? (cluster analysis)
+2.  Do the differentially expressed genes in the hybrid offspring also correlate with close by methylation differences. -- if so how which genes?
+3.  
 
 ### Description of Data
 
