@@ -82,22 +82,22 @@ The data transcriptomic and methylomic data associated with this paper can be fo
 
 based on the data collected from Li et al. 2018, we will :
 
-1.  Reconfirm their results by trying to reproduce their (1) clustering analysis of the RNA- seq data between the groups of parents and offpring that the authors have already defined, (2) their differential expression analysis to see if we obtain the same differentially expressed genes that they did,
+1.  Reconfirm their results by trying to reproduce their (1) clustering analysis of the RNA- seq data between the groups of parents and offpring that the authors have already defined, (2) their differential expression analysis to see if we obtain the same differentially expressed genes that they did wioth visualization through a heat map and dendrogram
 
-Find genes that were differentially expressed between parents and offspring. Instead of treating them sepparately, we will try pooling the parents and pooling the offspring data. &lt; unsure about this&gt;
+2.  Do the differentially expressed genes in the hybrid offspring also correlate with close by methylation differences. To visualize this we will compare the differences in methylation amongst differentially expressed genes in a scatter plot. Moreover, Li et al 2018 distiguish the methylation sites into 2 different data sets, methylated and hypomethylated.
 
-1.  Do the differentially expressed genes in the hybrid offspring also correlate with close by methylation differences. If so how which genes?
+3.  Do we consider the expression or methylation data different between the sets of parents. WHat about the offspring. In order to address this we can inlcude parents and offspring as a factor and test if they are distinct groups through **statical means**.
 
-2.  
+*We can find genes that were differentially expressed between parents and offspring.Instead of treating them sepparately, we will try pooling the parents and pooling the offspring data. &lt; unsure about this&gt;*
 
 ### Description of Data
 
 the data provided from Li et al. 2018 paper :
 
 -   RNA seq data with x. the samples included are :
--   a
--   b
--   c
+
+-   Raw methylation dat with number of counts
+-   sample description here
 
 ### Methods and Division of Labour
 
