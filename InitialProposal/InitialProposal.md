@@ -1,6 +1,6 @@
 Initial Proposal
 ================
-Team GGJJ
+**Team Brocoli**
 January 23 2019
 
 Title of project
@@ -80,7 +80,7 @@ The data transcriptomic and methylomic data associated with this paper can be fo
 
 ### Goals
 
-based on the data collected from --- and --- study, we will :
+based on the data collected from Li et al. 2018, we will :
 
 1.  Find genes that were differentially expressed between parents and offspring. Instead of treating them sepparately, we will try pooling the parents and pooling the offspring data. &lt; unsure about this&gt;
 
@@ -90,7 +90,7 @@ based on the data collected from --- and --- study, we will :
 
 ### Description of Data
 
-the data provided from x paper :
+the data provided from Li et al. 2018 paper :
 
 -   RNA seq data with x. the samples included are :
 -   a
