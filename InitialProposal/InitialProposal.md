@@ -74,18 +74,18 @@ The data transcriptomic and methylomic data associated with this paper can be fo
 
 [Li et al. 2018](https://bmcplantbiol.biomedcentral.com/articles/10.1186/s12870-018-1384-4) demonstrate that:
 
-Male rats have lower DNMT3a activity and DNA methylation than females Inhibiting DNMT masculinized neuronal markers and sexual behaviour in female rats, and has no effect on male behaviour. Females with conditional knockout of isoform DNMT3 also display male sexual behaviour Even outside of the restricted period of development where they are sensitive to hormone therapy, DNMT inhibition still masculinizes females Some changes in gene expression are as a result of DNMT inhibition. The authors did not, however, attempt to link these changes to their methylation data which is why we have selected to further evaluate this paper.
-
 -   a
 -   b
--   c
+-   methylation site differences were greater between parent-parent than parent-hybrid.
 
 ### Goals
 
 based on the data collected from --- and --- study, we will :
 
-1.  Are the parental lines more simmilar to each other than to the offspring exression? (cluster analysis)
-2.  Do the differentially expressed genes in the hybrid offspring also correlate with close by methylation differences. -- if so how which genes?
+1.  Find genes that were differentially expressed between parents and offspring. Instead of treating them sepparately, we will try pooling the parents and pooling the offspring data. &lt; unsure about this&gt;
+
+2.  Do the differentially expressed genes in the hybrid offspring also correlate with close by methylation differences. If so how which genes?
+
 3.  
 
 ### Description of Data
@@ -99,6 +99,6 @@ the data provided from x paper :
 
 ### Methods and Division of Labour
 
--   a
--   b
--   c
+-   Test whether the parental lines more simmilar to each other than to the offspring with regards to the expression data? how about the methylation data? (cluster analysis)
+-   Find differentially expressed genes with two approaches. First try between each parent child triad. Then try again by pooling the parental data and pooling the child data. How different are these results?
+-
