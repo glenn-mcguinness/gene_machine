@@ -16,6 +16,7 @@ This data is required for Goals 1, 2, & 3, outlined in the proposal.
 
 -   Data is organized into tabs along the bottom for comparisons between both parents (NKR-04 and NKR-05) and between each parent and the child (NKR-06)
 -   Each sheet has the Gene ID and Transcript ID, then the expression level of the given gene/transcript for each individual (NKR-04, NKR-05, NKR-06)
+-   Expression level is a normalized value, so the expression level is FPKM (fragments per kilobase of transcript per million mapped reads)
 -   Columns A-D are their measured values that we can extract for our analysis, after D is calculated by the authors and something we can try to replicate to meet our goals
 
 ### *Data Set 2*
