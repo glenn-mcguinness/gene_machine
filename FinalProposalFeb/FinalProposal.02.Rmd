@@ -37,6 +37,9 @@ The following proposal is meant to give an outline of our project with an introd
 
 ### Abstract
 
+The plant cell wall determines cell shape, rigidity, and architecture ultimately affecting the mechanical strength of the plant tissues. There are two general types of cell walls, primary cell walls that are formed and modified while the cell is still growing and secondary cell walls that are laid down after the cell has stopped growing in the process of cell differentiation, for example into water conducting cells called xylem. <insert differences between the various cells with secondary cell walls> The production of these cell wall types requires the co-ordinated production, modification, and secretion of different polysaccharides such as cellulose, hemi-cellulose, and pectin into the extracellular matrix as well as programmed cell death.
+
+
 Hybrid vigour or heterosis is the improved quality or trait in the offspring as a result of mixing the genetic contributions of its parents. As an illustration, brocoli have flowers that pack densely to form the head which is the main edible part of the plant. When breeding disimillar strains of brocoli their offspring can form much larger heads of brocoli as demonstrated by figure 1. 
 
 ![Brocoli heterosis](https://scontent.fyka1-1.fna.fbcdn.net/v/t1.0-9/49213408_10218077757916241_2440798217458155520_n.jpg?_nc_cat=111&_nc_ht=scontent.fyka1-1.fna&oh=d67a2a1ec54157595a7320d8cbed3bc3&oe=5CFB074F).

@@ -1,12 +1,12 @@
 Initial Proposal
 ================
-**Team Brocoli**
-January 23 2019
+**Gene Machine**
+Feb 13th 2019
 
 Title of project
 ----------------
 
-This is initial proposal for **Team Brocoli**.
+This is initial proposal for **Team Gene Machine**.
 
 Our team members are:
 
@@ -45,7 +45,7 @@ Our team members are:
 </tbody>
 </table>
 
-Our project is based on the 2018 paper [Transcriptome and DNA methylome reveal insights into yield heterosis in the curds of broccoli (Brassica oleracea L var. italic)](https://bmcplantbiol.biomedcentral.com/articles/10.1186/s12870-018-1384-4?fbclid=IwAR3glcIlScIMQzxMjWtuaDowqrv7DlZbzAjrTAiHRlXkRfWdyfWgt_BqCW4).
+Our project is based on papers [Transcriptome and DNA methylome reveal insights into yield heterosis in the curds of broccoli (Brassica oleracea L var. italic)](https://bmcplantbiol.biomedcentral.com/articles/10.1186/s12870-018-1384-4?fbclid=IwAR3glcIlScIMQzxMjWtuaDowqrv7DlZbzAjrTAiHRlXkRfWdyfWgt_BqCW4).
 
 *Refference*
 
