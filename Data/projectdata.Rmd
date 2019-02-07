@@ -1,0 +1,59 @@
+---
+title: "projectdata"
+author: "michelle kang"
+date: "February 7, 2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(GEOquery)
+library(biomaRt)
+library(tidyverse)
+library(data.table)
+library(reshape2)
+library(limma)
+```
+
+```{r}
+if (file.exists("GSE77153.Rdata")) {
+    # if previously downloaded
+    load("GSE77153.Rdata")
+} else {
+    # Get geo object that contains our data and phenotype information
+    geo_obj <- getGEO("GSE77153", GSEMatrix = TRUE)
+    geo_obj <- geo_obj[[1]]
+    head(geo_obj)
+    save(geo_obj, file = "GSE77153.Rdata")
+}
+
+# Get expression data
+data <- exprs(geo_obj)
+
+
+geo_obj2 <- getGEO("GSE70213", GSEMatrix = TRUE)
+geo_obj2 <- geo_obj2[[1]]
+prDes2 <- pData(geo_obj2)[, c("organism_ch1", "title", colnames(pData(geo_obj2))[grep("characteristics", 
+    colnames(pData(geo_obj2)))])]
+head(prDes2)
+colnames(prDes2) = c("organism", "sample_name", "tissue", "genotype", "sex", "age")
+prDes2$tissue = as.factor(gsub("tissue: ", "", prDes2$tissue))
+prDes2$genotype = as.factor(gsub("genotype: ", "", prDes2$genotype))
+prDes2$sex = as.factor(gsub("Sex: ", "", prDes2$sex))
+prDes2$age = gsub("age: ", "", prDes2$age)
+head(prDes2)
+
+
+metaData <- pData(geo_obj)[, c("organism_ch1", "title", colnames(pData(geo_obj))[grep("characteristics", 
+    colnames(pData(geo_obj)))])]
+head(metaData)
+colnames(metaData) = c("organism", "sample_name", "ecotype", "vector", "tissue", "treatment", "age")
+metaData$ecotype = as.factor(gsub("ecotype/background: ", "", metaData$ecotype))
+metaData$vector = as.factor(gsub("vector: ", "", metaData$vector))
+metaData$tissue = as.factor(gsub("tissue: ", "", metaData$tissue))
+metaData$treatment = as.factor(gsub("treatment: ", "", metaData$treatment))
+metaData$age = gsub("time after induction: ", "", metaData$age)
+head(metaData)
+
+```
+
