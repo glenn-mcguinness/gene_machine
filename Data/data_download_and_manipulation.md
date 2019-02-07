@@ -1,0 +1,331 @@
+Dowloading and Manipulating the Li & Ito Datasets
+================
+Michelle Kang & Jessica Schaub
+February 7, 2019
+
+Introduction
+============
+
+Our project deals with data from two papers, [Li et al 2016](http://www.plantphysiol.org/content/172/2/1334.long) & [Ohashi-Ito et al 2010](http://www.plantcell.org/content/22/10/3461.long#sec-14). Each paper has deposited their data to GEO, so we use the `GEOquery` package to access the data. Then we perform some basic data manipulation to filter for the data of interest. At the end, we provide a final description of the data format and provide ready-to-use data frames for further analysis, as well as csv files.
+
+Downloading Necessary Packages
+------------------------------
+
+``` r
+library(GEOquery)
+```
+
+    ## Loading required package: Biobase
+
+    ## Loading required package: BiocGenerics
+
+    ## Loading required package: parallel
+
+    ## 
+    ## Attaching package: 'BiocGenerics'
+
+    ## The following objects are masked from 'package:parallel':
+    ## 
+    ##     clusterApply, clusterApplyLB, clusterCall, clusterEvalQ,
+    ##     clusterExport, clusterMap, parApply, parCapply, parLapply,
+    ##     parLapplyLB, parRapply, parSapply, parSapplyLB
+
+    ## The following objects are masked from 'package:stats':
+    ## 
+    ##     IQR, mad, sd, var, xtabs
+
+    ## The following objects are masked from 'package:base':
+    ## 
+    ##     anyDuplicated, append, as.data.frame, basename, cbind,
+    ##     colMeans, colnames, colSums, dirname, do.call, duplicated,
+    ##     eval, evalq, Filter, Find, get, grep, grepl, intersect,
+    ##     is.unsorted, lapply, lengths, Map, mapply, match, mget, order,
+    ##     paste, pmax, pmax.int, pmin, pmin.int, Position, rank, rbind,
+    ##     Reduce, rowMeans, rownames, rowSums, sapply, setdiff, sort,
+    ##     table, tapply, union, unique, unsplit, which, which.max,
+    ##     which.min
+
+    ## Welcome to Bioconductor
+    ## 
+    ##     Vignettes contain introductory material; view with
+    ##     'browseVignettes()'. To cite Bioconductor, see
+    ##     'citation("Biobase")', and for packages 'citation("pkgname")'.
+
+    ## Setting options('download.file.method.GEOquery'='auto')
+
+    ## Setting options('GEOquery.inmemory.gpl'=FALSE)
+
+``` r
+library(biomaRt)
+library(tidyverse)
+```
+
+    ## -- Attaching packages --------------------------- tidyverse 1.2.1 --
+
+    ## v ggplot2 3.0.0     v purrr   0.2.5
+    ## v tibble  1.4.2     v dplyr   0.7.6
+    ## v tidyr   0.8.1     v stringr 1.3.1
+    ## v readr   1.1.1     v forcats 0.3.0
+
+    ## -- Conflicts ------------------------------ tidyverse_conflicts() --
+    ## x dplyr::combine()    masks Biobase::combine(), BiocGenerics::combine()
+    ## x dplyr::filter()     masks stats::filter()
+    ## x dplyr::lag()        masks stats::lag()
+    ## x ggplot2::Position() masks BiocGenerics::Position(), base::Position()
+    ## x dplyr::select()     masks biomaRt::select()
+
+``` r
+library(data.table)
+```
+
+    ## Warning: package 'data.table' was built under R version 3.5.2
+
+    ## 
+    ## Attaching package: 'data.table'
+
+    ## The following objects are masked from 'package:dplyr':
+    ## 
+    ##     between, first, last
+
+    ## The following object is masked from 'package:purrr':
+    ## 
+    ##     transpose
+
+``` r
+library(reshape2)
+```
+
+    ## Warning: package 'reshape2' was built under R version 3.5.2
+
+    ## 
+    ## Attaching package: 'reshape2'
+
+    ## The following objects are masked from 'package:data.table':
+    ## 
+    ##     dcast, melt
+
+    ## The following object is masked from 'package:tidyr':
+    ## 
+    ##     smiths
+
+``` r
+library(limma)
+```
+
+    ## 
+    ## Attaching package: 'limma'
+
+    ## The following object is masked from 'package:BiocGenerics':
+    ## 
+    ##     plotMA
+
+``` r
+library(data.table)
+library(knitr)
+```
+
+Data Download
+=============
+
+Li et al. 2016
+--------------
+
+The data are accessed from GEO using accession number [GSE77153](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE77153). Expression data and metadata are saved as separate files, so they must be downloaded separately. The expression data is saved as a data frame `li_expdata`. The metadata is saved as a data frame `li_metadata`.
+
+``` r
+# This code keeps us from re-downloading the data every time
+# If it exists on our computer already, R will only load it
+if (file.exists("GSE77153.Rdata")) {
+    # if previously downloaded
+    load("GSE77153.Rdata")
+} else {
+    # Get geo object that contains our data and phenotype information
+    geo_obj <- getGEO("GSE77153", GSEMatrix = TRUE)
+    geo_obj <- geo_obj[[1]]
+    head(geo_obj)
+    save(geo_obj, file = "GSE77153.Rdata")
+}
+
+# Get expression data
+li_expdata <- exprs(geo_obj)
+
+#Get metadata
+li_metadata <- pData(geo_obj)[, c("organism_ch1", "title", colnames(pData(geo_obj))[grep("characteristics", 
+    colnames(pData(geo_obj)))])]
+
+#Changing column names to something more informative
+colnames(li_metadata) = c("organism", "sample_name", "ecotype", "vector", "tissue", "treatment", "age")
+li_metadata$ecotype = as.factor(gsub("ecotype/background: ", "", li_metadata$ecotype))
+li_metadata$vector = as.factor(gsub("vector: ", "",li_metadata$vector))
+li_metadata$tissue = as.factor(gsub("tissue: ", "", li_metadata$tissue))
+li_metadata$treatment = as.factor(gsub("treatment: ", "", li_metadata$treatment))
+li_metadata$age = gsub("time after induction: ", "", li_metadata$age)
+```
+
+The metadata and expression data files are now in a table format. We need to convert them to data frames and do a bit more tyding up. We end by gathering the data into tidy form as `tidy_li_expdata`.
+
+``` r
+#Convert to data frame
+li_expdata <- data.frame(li_expdata)
+
+#Set gene names as a variable, not row names
+#Expression data
+setDT(li_expdata, keep.rownames = TRUE)
+colnames(li_expdata)[colnames(li_expdata)=="rn"] <- "gene_id"
+#Metadata
+setDT(li_metadata, keep.rownames = TRUE)
+colnames(li_metadata)[colnames(li_metadata)=='rn'] <- "sample"
+
+#Convert to long form
+tidy_li_expdata <- li_expdata %>% 
+  gather(key="sample", value="expression", 2:ncol(li_expdata))
+```
+
+Ohashi-Ito et al. 2010
+----------------------
+
+As above, we access the data from GEO with accession number [GSE20586](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM517080). Again, expression data and metadata are saved as two different files so they need to be downloaded individually. The expression data is saved as `ito_expdata` and the metadata is saved as `ito_metadata`.
+
+``` r
+if (file.exists("GSE20586.Rdata")) {
+    # if previously downloaded
+    load("GSE20586.Rdata")
+} else {
+    # Get geo object that contains our data and phenotype information
+    geo_obj <- getGEO("GSE20586", GSEMatrix = TRUE)
+    geo_obj <- geo_obj[[1]]
+    head(geo_obj)
+    save(geo_obj, file = "GSE20586.Rdata")
+}
+
+# Get expression data
+ito_expdata <- exprs(geo_obj)
+
+
+ito_metadata <- pData(geo_obj)[, c("organism_ch1", "title", colnames(pData(geo_obj))[grep("characteristics", 
+    colnames(pData(geo_obj)))])]
+
+colnames(ito_metadata) = c("organism", "sample_name", "treatment", "age")
+ito_metadata$treatment = as.factor(gsub("cultured cell type: ", "", ito_metadata$treatment))
+ito_metadata$age = gsub("time point: ", "", ito_metadata$age)
+```
+
+As above, we need to convert the tables to data frames and perform some other tidying tasks. The data is gathered at the end to tidy form for future analysis as `tidy_ito_expdata`.
+
+``` r
+#Convert to data frame
+ito_expdata <- data.frame(ito_expdata)
+
+#Set gene names as a variable, not row names
+#Expression Data
+setDT(ito_expdata, keep.rownames = TRUE)
+colnames(ito_expdata)[colnames(ito_expdata)=="rn"] <- "gene_id"
+#Metadata
+setDT(ito_metadata, keep.rownames = TRUE)
+colnames(ito_metadata)[colnames(ito_metadata)=="rn"] <- "sample"
+
+#Convert to long form
+tidy_ito_expdata <- ito_expdata %>% 
+  gather(key="sample", value="expression", 2:ncol(ito_expdata))
+```
+
+Combining Metadata and Data
+===========================
+
+The individual files for metadata and expression data can be combined by sample ID.
+
+Li et al. 2016
+--------------
+
+``` r
+full_li_data <- left_join(tidy_li_expdata, li_metadata, by = 'sample')
+```
+
+Ohashi et al. 2010
+------------------
+
+``` r
+full_ito_data <- left_join(tidy_ito_expdata, ito_metadata, by = 'sample')
+```
+
+Filtering Data
+==============
+
+To make the data frames easier to work with, we will remove some of the unused columns and samples that we are not interested in.
+
+Li et al. 2016
+--------------
+
+We are only interested in samples with age 0 hrs or 12 hrs.
+
+``` r
+# Remove some unused columns and filter for ages of interest
+li_data <- full_li_data %>% 
+  select(-organism, -sample_name, -ecotype, -tissue, -vector) %>% 
+  filter(age == '0h'|age == '12h')
+```
+
+Ohashi-Ito et al. 2010
+----------------------
+
+``` r
+# Remove some unused columns
+ito_data <- full_ito_data %>% 
+  select(-organism, -sample_name)
+```
+
+Data Description
+================
+
+At this point, both data sets are clean and they have the same information in the same format:
+
+``` r
+head(li_data, 10) %>% 
+  kable()
+```
+
+| gene\_id      | sample     |  expression| treatment | age |
+|:--------------|:-----------|-----------:|:----------|:----|
+| 244901\_at    | GSM2044878 |    4.297195| DMSO      | 12h |
+| 244902\_at    | GSM2044878 |    5.779524| DMSO      | 12h |
+| 244903\_at    | GSM2044878 |    7.381813| DMSO      | 12h |
+| 244904\_at    | GSM2044878 |    4.747893| DMSO      | 12h |
+| 244905\_at    | GSM2044878 |    2.138415| DMSO      | 12h |
+| 244906\_at    | GSM2044878 |    4.898712| DMSO      | 12h |
+| 244907\_at    | GSM2044878 |    2.138415| DMSO      | 12h |
+| 244908\_at    | GSM2044878 |    2.138415| DMSO      | 12h |
+| 244909\_at    | GSM2044878 |    2.150549| DMSO      | 12h |
+| 244910\_s\_at | GSM2044878 |    2.138415| DMSO      | 12h |
+
+``` r
+head(ito_data, 10) %>% 
+  kable()
+```
+
+| gene\_id      | sample    |  expression| treatment       | age |
+|:--------------|:----------|-----------:|:----------------|:----|
+| 244901\_at    | GSM517073 |    945.0120| wt culture cell | 0h  |
+| 244902\_at    | GSM517073 |    853.5060| wt culture cell | 0h  |
+| 244903\_at    | GSM517073 |    922.8020| wt culture cell | 0h  |
+| 244904\_at    | GSM517073 |    187.8480| wt culture cell | 0h  |
+| 244905\_at    | GSM517073 |     42.4627| wt culture cell | 0h  |
+| 244906\_at    | GSM517073 |   1799.1700| wt culture cell | 0h  |
+| 244907\_at    | GSM517073 |     72.7707| wt culture cell | 0h  |
+| 244908\_at    | GSM517073 |     11.9383| wt culture cell | 0h  |
+| 244909\_at    | GSM517073 |     22.9653| wt culture cell | 0h  |
+| 244910\_s\_at | GSM517073 |     37.4625| wt culture cell | 0h  |
+
+These data sets are stored as data frames under `li_data` and `ito_data` for analysis. We will also export them as csv files.
+
+``` r
+write_csv(li_data, "li_data.csv")
+write_csv(ito_data, "ito_data.csv")
+```
+
+The variables are as follows:
+
+-   *gene\_id* : Probe label
+-   *sample* : Sample id that the RNA came from
+-   *expression* : normalized values for expression, but each paper normalized differently so we will deal with this during the analysis step
+-   *treatment* : information about which cell lines and conditions the samples were taken from
+-   *age* : the age of the sample in hours, where time 0 is usually the addition of DEX or estrogen
