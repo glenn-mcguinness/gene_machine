@@ -22,5 +22,5 @@ Our project is based on data from the following two papers:
 
 ## Directory
 
-Our project is organized in subdirectories for different componenet related to data, writing, analysis, etc...
+Our project is organized in subdirectories for different components related to data, writing, analysis, etc...
 Please see the subdirectories for relevant information.
