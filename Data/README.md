@@ -9,4 +9,4 @@ Both papers store their data in Gene Expression Omnibus (GEO) using GEO accessio
 
 The following files are found in this directory:
 
-- [data_download_and_manipulation.Rmd](https://github.com/glenn-mcguinness/stat540FinalProject/blob/master/Data/data_download_and_manipulation.Rmd) : Run this Rmd file to download the data, clean it, filter it, and produce two csv files, one for each paper, with only the data that is relevant to our project.
+- [data_download_and_manipulation.Rmd](https://github.com/glenn-mcguinness/stat540FinalProject/blob/master/Data/data_download_and_manipulation.Rmd) : Run this Rmd file to download the data, clean it, filter it, and produce two csv files, one for each paper. The csv files contain only the data that is relevant for our project, and the data is in tidy (long) format that is ready for analysis.
