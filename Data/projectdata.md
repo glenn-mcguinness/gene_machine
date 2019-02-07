@@ -1,22 +1,9 @@
----
-title: "projectdata"
-author: "michelle kang"
-date: "February 7, 2019"
-output: github_document
----
+projectdata
+================
+michelle kang
+February 7, 2019
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-library(GEOquery)
-library(biomaRt)
-library(tidyverse)
-library(data.table)
-library(reshape2)
-library(limma)
-library(data.table)
-```
-
-```{r}
+``` r
 if (file.exists("GSE77153.Rdata")) {
     # if previously downloaded
     load("GSE77153.Rdata")
@@ -41,10 +28,9 @@ li_metadata$vector = as.factor(gsub("vector: ", "",li_metadata$vector))
 li_metadata$tissue = as.factor(gsub("tissue: ", "", li_metadata$tissue))
 li_metadata$treatment = as.factor(gsub("treatment: ", "", li_metadata$treatment))
 li_metadata$age = gsub("time after induction: ", "", li_metadata$age)
-
 ```
 
-```{r}
+``` r
 li_data <- data.frame(li_data)
 setDT(li_data, keep.rownames = TRUE)
 #rename column 1
@@ -54,4 +40,3 @@ setDT(li_data, keep.rownames = TRUE)
 tidy_li_data <- li_data %>% 
   gather(key="sample", value="expression")
 ```
-
