@@ -45,7 +45,7 @@ Our team members are:
 </tbody>
 </table>
 
-*Our project is based on there data from:*
+Our project is based on data from:
 
 -   [GSE20586](https://bit.ly/2UEOxqj) from the paper [Arabidopsis VASCULAR-RELATED NAC-DOMAIN6 Directly Regulates the Genes That Govern Programmed Cell Death and Secondary Wall Formation during Xylem Differentiation](https://bit.ly/2WJtnJI)
 
@@ -54,11 +54,11 @@ Our team members are:
 Proposal
 --------
 
-The following proposal is meant to give an outline of our project with an introduction, objectives, description of the data, proposed major analysis, and a breakdown of assigned tasks.
+The following proposal outlines our project with an introduction, objectives, description of the data, proposed major analysis, and a breakdown of assigned tasks.
 
 ### Abstract
 
-The plant cell wall determines cell shape, rigidity, and architecture ultimately affecting the mechanical strength of the tissues. There are two general types of cell walls, primary cell walls, formed and modified in growing cells, and secondary cell walls, laid down after the cell has stopped growing in some cell types as a process of cell differentiation influencing both mechanical strength and permeability to water. In particular a majority of secondary cell walls are found in cells specialized in conducting fluids, such as water transportation. A common example of highly visible secondary cell walls is wood, where the cells have died but the secondary cell wall remains. More specifically, metaxylem, protoxylem, and interfasicular fibers are water conducting cell types with secondary cell walls that are commonly studied in arabidopsis (figure 1).
+The plant cell wall determines cell shape, rigidity, and architecture, which ultimately affects the mechanical strength of the tissues. There are two general types of cell walls: primary cell walls, formed and modified in growing cells, and secondary cell walls, laid down after the cell has stopped growing in some cell types as a process of cell differentiation. Secondary cell walls influence both mechanical strength and permeability to water. In particular, a majority of secondary cell walls are found in cells specialized for conducting fluids, such as water transportation. A common example of highly visible secondary cell walls is wood, where the cells have died but the secondary cell wall remains. More specifically, metaxylem, protoxylem, and interfasicular fibers are water conducting cell types with secondary cell walls that are commonly studied in *Arabidopsis* (figure 1).
 
 ![Differentiation of pre xylem cells](https://bit.ly/2Bo7QNr)
 
@@ -70,11 +70,11 @@ The production of these secondary cell walls involves a tightly regulated transc
 
 Figure 2. Induced VND7 turns on secondary cell wall formation in BY2 cells. Normally BY2 cells would not produce secondary cell walls.
 
-Despite all controlling secondary cell wall formation, the cell type and resulting secondary cell wall composition and shape differ based on the transcription factor turned on. VND7, VND6 and SND1 are thought to turn on secondary cell wall formation in metaxylem, protoxylem, and fiber cell types respectively but are generally all expressed to a certain degree during secondary cell wall formation (Kubo et al., 2005; Zhong, Demura, & Ye, 2006). However, the secondary cell walls in these cell types are markedly different as can be seen in figure 2., protoxylem with the helical, metaxylem with reticulate, or fibers with thick evenly distributed secondary cell wall thickenings, and the global underlying expressional differences regulating this morphological differentiation remains elusive.
+Although all of these transcription factors control secondary cell wall formation, the cell type and resulting secondary cell wall composition and shape differ based on the specific transcription factor that has been activated. VND7, VND6 and SND1 are thought to turn on secondary cell wall formation in metaxylem, protoxylem, and fiber cell types respectively but are generally all expressed to a certain degree during secondary cell wall formation (Kubo et al., 2005; Zhong, Demura, & Ye, 2006). However, the secondary cell walls in these cell types are markedly different, illustrated in figure 2. (protoxylem with the helical, metaxylem with reticulate, or fibers with thick evenly distributed secondary cell wall thickenings). The global underlying expressional differences regulating this morphological differentiation remains elusive.
 
-There have been some studies that have looked into the differential expression patterns induced after turning on the master transcription factors of secondary cell wall biosynthesis. For example, Ito et al. (2010) have demonstrated that VND6 and SND1 each regulated a small non-overlapping fraction of genes with distinct biological roles of programmed cell death or monolignol (a polymer specific to the secondary cell wall) biosynthesis (Ohashi-Ito, Oda, & Fukuda, 2010). They did this by turning on the expression of SND1 in suspended Arabidopsis cells and measuring expression at 0 hours and 12hours, i.e. before and as secondary cell wall is being formed. They then repeated this with VND6. Moreover, another study by Li et al. (2016) looked at VND7 seedlings and turned on their expression measuring again at 0 and 12hours respectively (Li et al., 2016). Both of these studies used commercial affametrix arrays for Arabidopsis. More information on the \[ATH1-121501\] Affymetrix Arabidopsis ATH1 Genome Array used can be found [here](https://bit.ly/2MN380j).
+Some studies have examined the differential expression patterns induced after turning on the master transcription factors of secondary cell wall biosynthesis. Ito et al. (2010) turned on the expression of SND1 in suspended *Arabidopsis* cells and measuring expression at 0 hours and 12 hours, i.e. before and during secondary cell wall formation. Then they repeated this with VND6. Their finding suggested that VND6 and SND1 control a group of overlapping genes, but they also each control a group of non-overlapping genes with specific functions related to different aspects of secondary cell wall formation (i.e. programmed cell death or the synthesis of a polymer specific to the secondary cell wall). Li et al. (2016) turned on expression of VND7 seedlings, then also measured at 0 and 12 hours. Both of these studies used [commercial affametrix arrays](https://bit.ly/2MN380j) for *Arabidopsis* (ATH1 genome array by Affimetrix). 
 
-The differentiation of xylem precursors into protoxylem and metaxylem are markedly different (as depicted in figure 1) and as a result, one would imagine that transcriptional regulation by either VND6 or VND7 would yield overlapping but differential gene regulation. To date, no one has explicitly compared these particular differences on a global scale. As a result, we would like to try and compare????
+The differentiation of xylem precursors into protoxylem and metaxylem are markedly different (figure 1) and as a result, it is likely that transcriptional regulation by either VND6 or VND7 would yield overlapping but differential gene regulation. To date, no one has explicitly compared these particular differences on a global scale. As a result, we would like to try and compare????
 
 -   DE expression analysis
 -   Combining data
@@ -96,26 +96,20 @@ The differentiation of xylem precursors into protoxylem and metaxylem are marked
 
 ### Goals
 
-based on the data collected from Li et al. 2018, we will :
+based on the data collected from ......, we will :
 
 1.Given the expression level of genes in tissues expressing VND6 or VND7 or SND1, determine if the gene is differentially expressed in VND6 or VND7 or SND1.
 
-1.  Reconfirm their results by trying to reproduce their (1) clustering analysis of the RNA- seq data between the groups of parents and offpring that the authors have already defined, (2) their differential expression analysis to see if we obtain the same differentially expressed genes that they did wioth visualization through a heat map and dendrogram
+1.  
 
-2.  Do the differentially expressed genes in the hybrid offspring also correlate with close by methylation differences. To visualize this we will compare the differences in methylation amongst differentially expressed genes in a scatter plot. Moreover, Li et al 2018 distiguish the methylation sites into 2 different data sets, methylated and hypomethylated.
+1.  
 
-3.  Do we consider the expression or methylation data different between the sets of parents. WHat about the offspring. In order to address this we can inlcude parents and offspring as a factor and test if they are distinct groups through **statical means**.
+1.  
 
-*We can find genes that were differentially expressed between parents and offspring.Instead of treating them sepparately, we will try pooling the parents and pooling the offspring data. &lt; unsure about this&gt;*
 
 ### Description of Data
 
-the data provided from Li et al. 2018 paper :
-
--   RNA seq data with x. the samples included are :
-
--   Raw methylation dat with number of counts
--   sample description here
+Li et al. 2016 and Ohashi-Ito et al. 2010 both used the ATH1 microarray from Affimetrix to measure expression of total RNA from their samples. Therefore, we have two datasets of normalized gene expression data for every gene in the *Arabadopsis thaliana* genome. The data were taken across samples from plants under different conditions (SND1-, VND6-, or VND7-activated with controls) and at different time points during secondary cell wall production (0 and 12 hrs). For more information about the data format, please see our “[Data]( https://github.com/glenn-mcguinness/stat540FinalProject/tree/master/Data)” subdirectory.
 
 ### Methods and Division of Labour
 
