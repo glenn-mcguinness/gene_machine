@@ -17,11 +17,20 @@ Both datasets have gene expression data at 0 and 12hrs from the same Affimetrix 
 
 #### Li et al. 2016
 
-This paper targets VND7, which can be forcefully overexpressed with the addition of DEX. They therefore have expression data at time 0, at time 12 hrs with the addition of DEX, and time 12 hrs without the addition of DEX.
+This paper targets VND7, which can be forcefully overexpressed with the addition of DEX. They have expression data from samples taken at time 0, at time 12 hrs with the addition of DEX, and time 12 hrs without the addition of DEX.
 
 #### Ohashi-Ito et al. 2010
 
-This paper targets both VND6 and SND1 by using cell cultures that were created with tagged VND6 or tagged SND1 that will become overexpressed with the addition of estrogen. They therefore have expression data at time 0 for each of wild type, VND6-tagged, and SND1-tagged cells, and well as time 12 hrs after the addition of estrogen for wild type, VND6-tagged, and SND1-tagged cells.
+This paper targets both VND6 and SND1 by using cell cultures that were created with tagged VND6 or tagged SND1 that will become overexpressed with the addition of estrogen. They have expression data from samples taken at time 0 for each of wild type, VND6-tagged, and SND1-tagged cells, and well as time 12 hrs after the addition of estrogen for wild type, VND6-tagged, and SND1-tagged cells.
+
+## Data Format
+
+This folder contains an R Markdown file (see Files) that extracts the data from GEO using the accession numbers, cleans & filters it, and exports two csv files, one for each paper's data. The final csv's have the following format:
+
+- **li_data.csv** : 342,150 observations of 5 variables (long format)
+- **ito_data.csv** : 410,580 observations of 5 variables (long format)
+
+The variables are the same for both files: "gene_id", "sample", "expression", "treatment", "age".
 
 ## Files
 
