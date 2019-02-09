@@ -35,7 +35,7 @@ Github ID |  Name
 
 The following proposal is meant to give an outline of our project with an introduction, objectives, description of the data, proposed major analysis, and a breakdown of assigned tasks.
 
-### Abstract
+### Motivation and Background
 
 The plant cell wall determines cell shape, rigidity, and architecture ultimately affecting the mechanical strength of the tissues. There are two general types of cell walls, primary cell walls, formed and modified in growing cells, and secondary cell walls, laid down after the cell has stopped growing in some cell types as a process of cell differentiation influencing both mechanical strength and permeability to water. In particular a majority of secondary cell walls are found in cells specialized in conducting fluids, such as water transportation. A common example of highly visible secondary cell walls is wood, where the cells have died but the secondary cell wall remains. More specifically, metaxylem, protoxylem, and interfasicular fibers are water conducting cell types with secondary cell walls that are commonly studied in arabidopsis (figure 1). 
 
@@ -49,12 +49,12 @@ The production of these secondary cell walls involves a tightly regulated transc
 
 Figure 2. Induced VND7 turns on secondary cell wall formation in BY2 cells. Normally BY2 cells would not produce secondary cell walls. 
 
-Despite all controlling secondary cell wall formation, the cell type and resulting secondary cell wall composition and shape differ based on the transcription factor turned on. VND7, VND6 and SND1 are thought to turn on secondary cell wall formation in metaxylem, protoxylem, and fiber cell types respectively but are generally all expressed to a certain degree during secondary cell wall formation (Kubo et al., 2005; Zhong, Demura, & Ye, 2006). However, the secondary cell walls in these cell types are markedly different as can be seen in figure 2., protoxylem with the helical, metaxylem with reticulate, or fibers with thick evenly distributed secondary cell wall thickenings, and the global underlying expressional differences regulating this morphological differentiation remains elusive.
+Despite all controlling secondary cell wall formation, the cell type and resulting secondary cell wall composition and shape differ based on the transcription factor turned on. VND7, VND6 and SND1 are thought to turn on secondary cell wall formation in protoxylem, metaxylem, and fiber cell types respectively but are generally all expressed to a certain degree during secondary cell wall formation (Kubo et al., 2005; Zhong, Demura, & Ye, 2006). However, the secondary cell walls in these cell types are markedly different as can be seen in figure 2., protoxylem with the helical, metaxylem with reticulate, or fibers with thick evenly distributed secondary cell wall thickenings, and the global underlying expressional differences regulating this morphological differentiation remains elusive.
 
 There have been some studies that have looked into the differential expression patterns induced after turning on the master transcription factors of secondary cell wall biosynthesis. For example, Ito et al. (2010) have demonstrated that VND6 and SND1 each regulated a small non-overlapping fraction of genes with distinct biological roles of programmed cell death or monolignol (a polymer specific to the secondary cell wall) biosynthesis (Ohashi-Ito, Oda, & Fukuda, 2010). They did this by turning on the expression of SND1 in suspended Arabidopsis cells and measuring expression at 0 hours and 12hours, i.e. before and as secondary cell wall is being formed. They then repeated this with VND6. Moreover, another study by Li et al. (2016) looked at VND7 seedlings and turned on their expression measuring again at 0 and 12hours respectively (Li et al., 2016). Both of these studies used commercial affametrix arrays for Arabidopsis. More information on the [ATH1-121501] Affymetrix Arabidopsis ATH1 Genome Array used can be found [here](https://bit.ly/2MN380j).
 
 
-The differentiation of xylem precursors into protoxylem and metaxylem are markedly different (as depicted in figure 1) and as a result, one would imagine that transcriptional regulation by either VND6 or VND7 would yield overlapping but differential gene regulation. To date, no one has explicitly compared these particular differences on a global scale. As a result, we would like to try and compare????
+The differentiation of xylem precursors into protoxylem and metaxylem are markedly different (as depicted in figure 1) and as a result, one would imagine that transcriptional regulation by either VND6 or VND7 would yield overlapping but differential gene regulation. To date, no one has explicitly compared these particular differences on a global scale. As a result, we would like to try and compare exression differences between SND1, VND6, and VND7. However, both studies normalize and analyze their data differentlty and we want to try and anlyze them in a comparable way.
 
 
 -	DE expression analysis
@@ -82,30 +82,42 @@ The differentiation of xylem precursors into protoxylem and metaxylem are marked
 
 based on the data collected from Li et al. 2018, we will :
 
-1.Given the expression level of genes in tissues expressing VND6 or VND7 or SND1, determine if the gene is differentially expressed in VND6 or VND7 or SND1.
+1.Given the expression level of genes in tissues expressing VND6 or VND7 or SND1, determine if the gene is differentially expressed in VND6 or VND7 or SND1. In order to compare the data we will conduct differential analysis on the two datasets sepparately. We will normalize the dataset sepparately, but then try and conduct the statistics for the differential expression analysis in a standard way and visualize the expression differenences sepparately using hiarchly clustering and heat maps.
 
-1. Reconfirm their results by trying to reproduce their (1) clustering analysis of the RNA- seq data between the groups of parents and offpring that the authors have already defined, (2) their differential expression analysis to see if we obtain the same differentially expressed genes that they did wioth visualization through a heat map and dendrogram
+2. Then in order to test how different these datasets to determine if the data can be combine for one combined analysis we will conduct PCA and clustering analysis of the microarray data between the two studies.
 
-2. Do the differentially expressed genes in the hybrid offspring also correlate with close by methylation differences. To visualize this we will compare the differences in methylation amongst differentially expressed genes in a scatter plot. Moreover, Li et al 2018 distiguish the methylation sites into 2 different data sets, methylated and hypomethylated.
+3. If the PCA and clustering indicate that the datasets can be combined we will reanalyze the data all together. If not skip this step.
 
-3. Do we consider the expression or methylation data different between the sets of parents. WHat about the offspring. In order to address this we can inlcude parents and offspring as a factor and test if they are distinct groups through **statical means**. 
+4. Give GO annotations to all the probes within the dataset.
 
-*We can find genes that were differentially expressed between parents and offspring.Instead of treating them sepparately, we will try pooling the parents and pooling the offspring data. < unsure about this>*
+5. Of the differentially expressed genes look for motifs within the promoters of the upregulated genes for characteristic domains these secondary cell wall master transcription factors are thought to bind to, for example TERE sequences.
 
 
 ### Description of Data
 
-the data provided from Li et al. 2018 paper :
+Li et al. 2016 and Ohashi-Ito et al. 2010 both used the ATH1 microarray from Affimetrix to measure expression of total RNA from their samples. Therefore, we have two datasets of normalized gene expression data for every gene in the *Arabadopsis thaliana* genome. The data were taken across samples from plants under different conditions (SND1-, VND6-, or VND7-activated with controls) and at different time points during secondary cell wall production (0 and 12 hrs). For more information about the data format, please see our “[Data]( https://github.com/glenn-mcguinness/stat540FinalProject/tree/master/Data)” subdirectory.
 
-- RNA seq data with x. the samples included are :
+#### Li et al. 2016
 
+This paper targets VND7, which can be forcefully overexpressed with the addition of DEX. They have expression data from samples taken at time 0, at time 12 hrs with the addition of DEX, and time 12 hrs without the addition of DEX. Each have 3 biological replicates.
 
-- Raw methylation dat with number of counts
-- sample description here
+#### Ohashi-Ito et al. 2010
+
+This paper targets both VND6 and SND1 by using cell cultures that were created with tagged VND6 or tagged SND1 that will become overexpressed with the addition of estrogen. They have expression data from samples taken at time 0 for each of wild type, VND6-tagged, and SND1-tagged cells, and well as time 12 hrs after the addition of estrogen for wild type, VND6-tagged, and SND1-tagged cells. Each have 3 biological replicates.
+
+The accompanying folder contains an R Markdown file (see Files) that extracts the data from GEO using the accession numbers, cleans & filters it, and exports two csv files, one for each paper's data. The final csv's have the following format:
+
+- **li_data.csv** : 342,150 observations of 5 variables (long format)
+- **ito_data.csv** : 410,580 observations of 5 variables (long format)
+
+The variables are the same for both files: "gene_id", "sample", "expression", "treatment", "age".
+
 
 
 
 ### Methods and Division of Labour
+
+- Clean and orgnaize the data from the GEO database (Michelle and Jessica)
 
 - Test whether the parental lines more simmilar to each other than to the offspring with regards to the expression data? how about the methylation data? (cluster analysis)
 - Find differentially expressed genes with two approaches. First try between each parent child triad. Then try again by pooling the parental data and pooling the child data. How different are these results?

@@ -11,7 +11,7 @@ Both datasets have gene expression data at 0 and 12hrs from the same Affimetrix 
 
 - Li et al. 2016 took the raw CEL files from the microarray chip reader and evaluated them using the Robin software package. Expression levels for each probe set were estimated by GC-robust multi-array (GCRMA) analysis uring R package `gcrma`. Their expression values are log2 GCRMA values, which is a normalized value.
 
-- Ohashi-Ito et al. 2010 were less descriptive in their methods and data files about how the data were acquired. The chip data was read using Affimetrix GeneChip Operating Software (V1.4). There is little information about what the given expression values represent, other they are normalized. Perhaps looking into this software will make it more clear.
+- Ohashi-Ito et al. 2010 were less descriptive in their methods and data files about how the data were acquired. The chip data was read using Affimetrix GeneChip Operating Software (V1.4). There is little information about what the given expression values represent, other than that they are normalized. Perhaps looking into this software will make it more clear.
 
 ## Project Design
 
