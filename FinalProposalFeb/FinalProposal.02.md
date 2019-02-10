@@ -64,75 +64,41 @@ The plant cell wall determines cell shape, rigidity, and architecture ultimately
 
 Figure 1. Focusing on the left side of this diagram, illustration of undifferentiated parenchymatous plant cells into the various xylem cell types : protoxylem, metaxylem, and fibres. This figure is from Schuetz et al. 2012.
 
-The production of these secondary cell walls involves a tightly regulated transcriptional network. Specifically 5 transcription factors (SND1, VND7, VND6, NST1, and NST2) have been characterized as "master transcription factors" capable of activating the entire secondary cell wall biosynthetic program. For example when VND7 is activated, it is able to turn on the helical pattern of secondary cell wall formation. For a more detailed schematic describe some overall regulatory pathways of secondary cell wall synthesis see [here](https://bit.ly/2RDoEFt).
+The production of these secondary cell walls involves a tightly regulated transcriptional network. Specifically 5 transcription factors (SND1, VND7, VND6, NST1, and NST2) have been characterized as "master transcription factors" capable of activating the entire secondary cell wall biosynthetic program. For example when VND7 is activated in a cell, it is able to turn on the helical pattern of secondary cell wall formation. For a more detailed schematic describe some overall regulatory pathways of secondary cell wall synthesis see [here](https://bit.ly/2RDoEFt).
 
 ![helical pattern of secondary cell wall formation](https://bit.ly/2GbXSTv)
 
 Figure 2. Induced VND7 turns on secondary cell wall formation in BY2 cells. Normally BY2 cells would not produce secondary cell walls.
 
-Despite all controlling secondary cell wall formation, the cell type and resulting secondary cell wall composition and shape differ based on the transcription factor turned on. VND7, VND6 and SND1 are thought to turn on secondary cell wall formation in protoxylem, metaxylem, and fiber cell types respectively but are generally all expressed to a certain degree during secondary cell wall formation (Kubo et al., 2005; Zhong, Demura, & Ye, 2006). However, the secondary cell walls in these cell types are markedly different as can be seen in figure 2., protoxylem with the helical, metaxylem with reticulate, or fibers with thick evenly distributed secondary cell wall thickenings, and the global underlying expressional differences regulating this morphological differentiation remains elusive.
+Despite all controlling secondary cell wall formation, the cell type and resulting secondary cell wall composition and shape differ based on the transcription factor present. VND7, VND6 and SND1 are thought to turn on secondary cell wall formation in protoxylem, metaxylem, and fiber cell types respectively but are generally all expressed to a certain degree during secondary cell wall formation (Kubo et al., 2005; Zhong, Demura, & Ye, 2006). However, the secondary cell walls in these cell types are markedly different as can be seen in figure 2., protoxylem with the helical, metaxylem with reticulate, or fibers with thick evenly distributed secondary cell wall thickenings, and the global underlying expressional differences regulating this morphological differentiation remains elusive.
 
-There have been some studies that have looked into the differential expression patterns induced after turning on the master transcription factors of secondary cell wall biosynthesis. For example, Ito et al. (2010) have demonstrated that VND6 and SND1 each regulated a small non-overlapping fraction of genes with distinct biological roles of programmed cell death or monolignol (a polymer specific to the secondary cell wall) biosynthesis (Ohashi-Ito, Oda, & Fukuda, 2010). They did this by turning on the expression of SND1 in suspended Arabidopsis cells and measuring expression at 0 hours and 12hours, i.e. before and as secondary cell wall is being formed. They then repeated this with VND6. Moreover, another study by Li et al. (2016) looked at VND7 seedlings and turned on their expression measuring again at 0 and 12hours respectively (Li et al., 2016). Both of these studies used commercial affametrix arrays for Arabidopsis. More information on the \[ATH1-121501\] Affymetrix Arabidopsis ATH1 Genome Array used can be found [here](https://bit.ly/2MN380j).
+There have been some studies that have looked into the differential expression patterns induced after activating the master transcription factors of secondary cell wall biosynthesis. For example, Ito et al. (2010) have demonstrated that VND6 and SND1 each regulated a small non-overlapping fraction of genes with distinct biological roles with downsteam activation of programmed cell death or monolignol (a polymer specific to the secondary cell wall) biosynthesis (Ohashi-Ito, Oda, & Fukuda, 2010). They also found that both activated related secondary cell wall genes related to secondary cell wall formation and cytoskeleton resructuring. They measured these differences by turning on the expression of SND1 in suspended Arabidopsis cells and measuring expression at 0 hours and 12hours, i.e. before and as secondary cell wall is being formed. They then repeated this with VND6. Moreover, another study by Li et al. (2016) looked at VND7 seedlings and turned on their expression measuring again at 0 and 12hours respectively (Li et al., 2016) and look at correllated differences of transcriptional with metabolomic changes within a time course of 48 hours. Both of these studies used commercial affametrix arrays for Arabidopsis. More information on the \[ATH1-121501\] Affymetrix Arabidopsis ATH1 Genome Array used can be found [here](https://bit.ly/2MN380j).
 
-The differentiation of xylem precursors into protoxylem and metaxylem are markedly different (as depicted in figure 1) and as a result, one would imagine that transcriptional regulation by either VND6 or VND7 would yield overlapping but differential gene regulation. To date, no one has explicitly compared these particular differences on a global scale. As a result, we would like to try and compare exression differences between SND1, VND6, and VND7. However, both studies normalize and analyze their data differentlty and we want to try and anlyze them in a comparable way.
-
--   DE expression analysis
--   Combining data
--   Give GO annotations
--   For DE genes look for TEREs
--   Network analysis
-
-### Motivation
-
-[paper](link) demonstrate that:
-
--   a
--   b
-
-[paper](link) demonstrate that:
-
--   a
--   b
+The differentiation of xylem precursors into protoxylem and metaxylem are markedly different (as depicted in figure 1) and as a result, one would imagine that transcriptional regulation by either VND6 or VND7 would yield overlapping but differential gene regulation. To date, no one has explicitly compared these particular differences on a global scale. In response, we would like to try and compare exression differences between SND1, VND6, and VND7. However, both studies normalize and analyze their data differentlty and we want to try and anlyze them in a comparable way.
 
 ### Goals
 
 based on the data collected from Li et al. 2018, we will :
 
-1.Given the expression level of genes in tissues expressing VND6 or VND7 or SND1, determine if the gene is differentially expressed in VND6 or VND7 or SND1. In order to compare the data we will conduct differential analysis on the two datasets sepparately. We will normalize the dataset sepparately, but then try and conduct the statistics for the differential expression analysis in a standard way and visualize the expression differenences sepparately using hiarchly clustering and heat maps.
+1.  Given the expression level of genes in tissues expressing VND6 or VND7 or SND1, determine if the gene is differentially expressed in VND6 or VND7 or SND1. In order to compare the data we will conduct differential analysis on the two datasets sepparately. We will normalize the dataset sepparately, but then try and conduct the statistics for the differential expression analysis in a standard way and visualize the expression differenences sepparately using hiarchly clustering and heat maps.
 
-1.  Then in order to test how different these datasets to determine if the data can be combine for one combined analysis we will conduct PCA and clustering analysis of the microarray data between the two studies.
+2.  Then in order to test how different these datasets to determine if the data can be combine for one combined analysis we will conduct PCA and clustering analysis of the microarray data between the two studies.
 
-2.  If the PCA and clustering indicate that the datasets can be combined we will reanalyze the data all together. If not skip this step.
+3.  If the PCA and clustering indicate that the datasets can be combined we will reanalyze the data all together. If not skip this step.
 
-3.  Give GO annotations to all the probes within the dataset.
+4.  Give GO annotations to all the probes within the dataset and catagorize the expression differences by biological function. We may aim to make a overviewing schematic such as [this](http://www.plantcell.org/content/plantcell/22/10/3461/F8.large.jpg?width=800&height=600&carousel=1) expanding to incude downsteam effects activated by VND7.
 
-4.  Of the differentially expressed genes look for motifs within the promoters of the upregulated genes for characteristic domains these secondary cell wall master transcription factors are thought to bind to, for example TERE sequences.
+5.  Of the differentially expressed genes look for motifs within the promoters of the upregulated genes for characteristic domains these secondary cell wall master transcription factors are thought to bind to, for example TERE sequences.
 
 ### Description of Data
 
 Li et al. 2016 and Ohashi-Ito et al. 2010 both used the ATH1 microarray from Affimetrix to measure expression of total RNA from their samples. Therefore, we have two datasets of normalized gene expression data for every gene in the *Arabadopsis thaliana* genome. The data were taken across samples from plants under different conditions (SND1-, VND6-, or VND7-activated with controls) and at different time points during secondary cell wall production (0 and 12 hrs). For more information about the data format, please see our “[Data](https://github.com/glenn-mcguinness/stat540FinalProject/tree/master/Data)” subdirectory.
 
-#### Li et al. 2016
-
-This paper targets VND7, which can be forcefully overexpressed with the addition of DEX. They have expression data from samples taken at time 0, at time 12 hrs with the addition of DEX, and time 12 hrs without the addition of DEX. Each have 3 biological replicates.
-
-#### Ohashi-Ito et al. 2010
-
-This paper targets both VND6 and SND1 by using cell cultures that were created with tagged VND6 or tagged SND1 that will become overexpressed with the addition of estrogen. They have expression data from samples taken at time 0 for each of wild type, VND6-tagged, and SND1-tagged cells, and well as time 12 hrs after the addition of estrogen for wild type, VND6-tagged, and SND1-tagged cells. Each have 3 biological replicates.
-
-The accompanying folder contains an R Markdown file (see Files) that extracts the data from GEO using the accession numbers, cleans & filters it, and exports two csv files, one for each paper's data. The final csv's have the following format:
-
--   **li\_data.csv** : 342,150 observations of 5 variables (long format)
--   **ito\_data.csv** : 410,580 observations of 5 variables (long format)
-
-The variables are the same for both files: "gene\_id", "sample", "expression", "treatment", "age".
-
 ### Methods and Division of Labour
 
 -   Clean and orgnaize the data from the GEO database (Michelle and Jessica)
 
--   Test whether the parental lines more simmilar to each other than to the offspring with regards to the expression data? how about the methylation data? (cluster analysis)
--   Find differentially expressed genes with two approaches. First try between each parent child triad. Then try again by pooling the parental data and pooling the child data. How different are these results?
+-   
 
 ### Works cited
 
