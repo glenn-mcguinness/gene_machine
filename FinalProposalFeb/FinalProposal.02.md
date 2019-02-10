@@ -76,29 +76,26 @@ There have been some studies that have looked into the differential expression p
 
 The differentiation of xylem precursors into protoxylem and metaxylem are markedly different (as depicted in figure 1) and as a result, one would imagine that transcriptional regulation by either VND6 or VND7 would yield overlapping but differential gene regulation. To date, no one has explicitly compared these particular differences on a global scale. In response, we would like to try and compare exression differences between SND1, VND6, and VND7. However, both studies normalize and analyze their data differentlty and we want to try and anlyze them in a comparable way.
 
-### Goals
+### Description of Data
+
+Li et al. 2016 and Ohashi-Ito et al. 2010 both used the ATH1 microarray from Affimetrix to measure expression of total RNA from their samples. Therefore, we have two datasets of normalized gene expression data for every gene in the *Arabadopsis thaliana* genome. The data were taken across samples from plants under different conditions (SND1-, VND6-, or VND7-activated with controls) and at different time points during secondary cell wall production (0 and 12 hrs). For more information about the data format, please see our “[Data](https://github.com/glenn-mcguinness/stat540FinalProject/tree/master/Data)” subdirectory.
+
+### Aims and Methodology
 
 based on the data collected from Li et al. 2018, we will :
 
 1.  Given the expression level of genes in tissues expressing VND6 or VND7 or SND1, determine if the gene is differentially expressed in VND6 or VND7 or SND1. In order to compare the data we will conduct differential analysis on the two datasets sepparately. We will normalize the dataset sepparately, but then try and conduct the statistics for the differential expression analysis in a standard way and visualize the expression differenences sepparately using hiarchly clustering and heat maps.
 
-2.  Then in order to test how different these datasets to determine if the data can be combine for one combined analysis we will conduct PCA and clustering analysis of the microarray data between the two studies.
-
-3.  If the PCA and clustering indicate that the datasets can be combined we will reanalyze the data all together. If not skip this step.
-
-4.  Give GO annotations to all the probes within the dataset and catagorize the expression differences by biological function. We may aim to make a overviewing schematic such as [this](http://www.plantcell.org/content/plantcell/22/10/3461/F8.large.jpg?width=800&height=600&carousel=1) expanding to incude downsteam effects activated by VND7.
-
-5.  Of the differentially expressed genes look for motifs within the promoters of the upregulated genes for characteristic domains these secondary cell wall master transcription factors are thought to bind to, for example TERE sequences.
-
-### Description of Data
-
-Li et al. 2016 and Ohashi-Ito et al. 2010 both used the ATH1 microarray from Affimetrix to measure expression of total RNA from their samples. Therefore, we have two datasets of normalized gene expression data for every gene in the *Arabadopsis thaliana* genome. The data were taken across samples from plants under different conditions (SND1-, VND6-, or VND7-activated with controls) and at different time points during secondary cell wall production (0 and 12 hrs). For more information about the data format, please see our “[Data](https://github.com/glenn-mcguinness/stat540FinalProject/tree/master/Data)” subdirectory.
-
-### Methods and Division of Labour
-
 -   Clean and orgnaize the data from the GEO database (Michelle and Jessica)
+-   Conduct
 
--   
+1.  Then in order to test how different these datasets to determine if the data can be combine for one combined analysis we will conduct PCA and clustering analysis of the microarray data between the two studies.
+
+2.  If the PCA and clustering indicate that the datasets can be combined we will reanalyze the data all together. If not skip this step.
+
+3.  Give GO annotations to all the probes within the dataset and catagorize the expression differences by biological function. We may aim to make a overviewing schematic such as [this](http://www.plantcell.org/content/plantcell/22/10/3461/F8.large.jpg?width=800&height=600&carousel=1) expanding to incude downsteam effects activated by VND7.
+
+4.  Of the differentially expressed genes look for motifs within the promoters of the upregulated genes for characteristic domains these secondary cell wall master transcription factors are thought to bind to, for example TERE sequences.
 
 ### Works cited
 
