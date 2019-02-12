@@ -20,6 +20,10 @@ Our project is based on data from the following two papers:
 - [Li et al. 2016](https://bit.ly/2WJtnJI)
 - [Ohashi-Ito et al. 2010](https://bit.ly/2Txs0vk)
 
+## Proposal
+
+The proposal for our project can be found in the [project proposal](https://github.com/glenn-mcguinness/gene_machine/blob/master/project_proposal.md) markdown file.
+
 ## Directory
 
 Our project is organized in subdirectories for different components related to data, writing, analysis, etc...

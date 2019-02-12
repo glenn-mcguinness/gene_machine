@@ -36,15 +36,15 @@ The metadata is saved as a data frame `li_metadata`.
 ```{r}
 # This code keeps us from re-downloading the data every time
 # If it exists on our computer already, R will only load it
-if (file.exists("GSE77153.Rdata")) {
+if (file.exists("../data/raw_data/GSE77153.Rdata")) {
     # if previously downloaded
-    load("GSE77153.Rdata")
+    load("../data/raw_data/GSE77153.Rdata")
 } else {
     # Get geo object that contains our data and phenotype information
     geo_obj <- getGEO("GSE77153", GSEMatrix = TRUE)
     geo_obj <- geo_obj[[1]]
     head(geo_obj)
-    save(geo_obj, file = "GSE77153.Rdata")
+    save(geo_obj, file = "../data/raw_data/GSE77153.Rdata")
 }
 
 # Get expression data
@@ -90,15 +90,15 @@ Again, expression data and metadata are saved as two different files so they nee
 The expression data is saved as `ito_expdata` and the metadata is saved as `ito_metadata`.
 
 ```{r}
-if (file.exists("GSE20586.Rdata")) {
+if (file.exists("../data/raw_data/GSE20586.Rdata")) {
     # if previously downloaded
-    load("GSE20586.Rdata")
+    load("../data/raw_data/GSE20586.Rdata")
 } else {
     # Get geo object that contains our data and phenotype information
     geo_obj <- getGEO("GSE20586", GSEMatrix = TRUE)
     geo_obj <- geo_obj[[1]]
     head(geo_obj)
-    save(geo_obj, file = "GSE20586.Rdata")
+    save(geo_obj, file = "../data/raw_data/GSE20586.Rdata")
 }
 
 # Get expression data
