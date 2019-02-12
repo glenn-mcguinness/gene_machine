@@ -1,4 +1,4 @@
-# DATA Directory
+# Data Directory
 
 We are using data from the following two papers for our project:
 
@@ -36,4 +36,4 @@ The variables are the same for both files: "gene_id", "sample", "expression", "t
 
 The following files are found in this directory:
 
-- [data_download_and_manipulation.Rmd](https://github.com/glenn-mcguinness/stat540FinalProject/blob/master/data/data_download_and_manipulation.Rmd) : Run this Rmd file to download the data, clean it, filter it, and produce two csv files, one for each paper. The csv files contain only the data that is relevant for our project, and the data is in tidy (long) format that is ready for analysis.
+- [data_download_and_manipulation.Rmd](https://github.com/glenn-mcguinness/stat540FinalProject/blob/master/src/data_download/data_download_and_manipulation.Rmd) : Run this Rmd file to download the data, clean it, filter it, and produce two csv files, one for each paper. The csv files contain only the data that is relevant for our project, and the data is in tidy (long) format that is ready for analysis.
